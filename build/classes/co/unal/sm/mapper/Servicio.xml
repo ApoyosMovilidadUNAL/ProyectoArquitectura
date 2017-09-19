@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="Servicio">
+
+	<select id="consultarServicioPorId" parameterType="java.lang.Integer"
+		resultType="Servicio">
+		select *
+		from HT_SERVICIO where ID = #{id}
+	</select>
+
+	<select id="consultarServicios" resultType="Servicio">
+		select * from
+		HT_SERVICIO
+	</select>
+
+	<insert id="agregarServicio" parameterType="Servicio">
+		insert into
+		HT_SERVICIO(NOMBRE_SERVICIO, DESCRIPCION)
+		values(#{nombre_servicio},#{descripcion})
+	</insert>
+
+	<insert id="asignarServicioHogar" parameterType="HogarServicio">
+		insert into
+		HT_HOGAR_SERVICIO(ESTADO_SERVICIO, HT_HOGAR_ID, HT_SERVICIO_ID,
+		FECHA_VISITA, FECHA_INSTALACION, FECHA_RETIRO)
+		values(#{estado_servicio},#{ht_hogar_id},#{ht_servicio_id},
+		#{fecha_visita}, #{fecha_instalacion}, #{fecha_retiro})
+	</insert>
+
+	<select id="consultarServiciosHogar" parameterType="java.lang.Integer"
+		resultType="java.lang.String">
+		select s.NOMBRE_SERVICIO from HT_SERVICIO s join
+		HT_HOGAR_SERVICIO hs on hs.HT_SERVICIO_ID = s.ID where HT_HOGAR_ID =
+		#{ht_hogar_id}
+	</select>
+
+	<update id="actualizarEstadoServicioHogar" parameterType="java.util.Map">
+		update
+		HT_HOGAR_SERVICIO set ESTADO_SERVICIO = #{estado_servicio} where
+		HT_HOGAR_ID = #{ht_hogar_id} and HT_SERVICIO_ID = #{ht_servicio_id}
+	</update>
+
+</mapper>

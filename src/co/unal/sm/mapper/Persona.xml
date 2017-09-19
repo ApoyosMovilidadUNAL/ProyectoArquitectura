@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+<mapper namespace="Persona">
+	<select id="consultarPersonaPorId" resultType="Persona" parameterType="java.lang.Integer">
+		select * from HT_PERSONA where ID = #{id}
+	</select>
+	
+	<insert id="agregarPersona" parameterType="Persona">
+		insert into HT_PERSONA(NOMBRE,APELLIDO,CORREO,IDENTIFICACION) values(#{nombre},#{apellido},#{correo},#{identificacion})
+	</insert>
+	
+	<select id="consultarIdPersona" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select ID from HT_PERSONA where IDENTIFICACION = #{identificacion}
+	</select>
+</mapper>

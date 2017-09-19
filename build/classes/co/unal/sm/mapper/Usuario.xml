@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="Usuario">
+
+	<select id="consultarUsuarioPorId" parameterType="java.lang.Integer" resultType="Usuario">
+		select *
+		from HT_USUARIO where ID = #{id}
+	</select>
+
+	<insert id="agregarUsuario" parameterType="Usuario">
+		insert into
+		HT_USUARIO(CLAVE, HT_PERSONA_ID)
+		values(#{clave},#{ht_persona_id})
+	</insert>
+
+</mapper>

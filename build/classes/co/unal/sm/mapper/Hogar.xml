@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="Hogar">
+
+	<select id="consultarHogarPorCliente" parameterType="java.lang.Integer" resultType="Hogar">
+		select *
+		from HT_HOGAR where HT_CLENTE_ID = #{ht_clente_id}
+	</select>
+
+	<select id="consultarHogares" resultType="Hogar">
+		select * from HT_HOGAR
+	</select>
+
+	<insert id="agregarHogar" parameterType="Hogar">
+		insert into
+		HT_HOGAR(DIRECCION, UBICACION, HT_CLENTE_ID,FECHA_REGISTRO)
+		values(#{direccion},#{ubicacion},#{ht_clente_id},#{fecha_registro})
+	</insert>
+
+</mapper>
