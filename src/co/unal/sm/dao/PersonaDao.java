@@ -51,6 +51,6 @@ public class PersonaDao {
 		}finally {
 			session.close();	
 		}
-		
 	}
+
 }

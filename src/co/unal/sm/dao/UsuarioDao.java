@@ -40,4 +40,16 @@ public class UsuarioDao {
 		System.out.println("agregarUsuario()--->" + id_usuario);
 		return true;
 	}
+
+	public Usuario consultarUsuarioPorIdPersona(Integer idPersona) {
+		Usuario usuario = new Usuario();
+		SqlSession session = sqlSessionFactory.openSession();
+		try {
+			usuario = session.selectOne("Usuario.consultarUsuarioPorIdPersona", idPersona);
+		} finally {
+			session.close();
+		}
+		System.out.println("consultarUsuarioPorIdPersona()--->" + usuario);
+		return usuario;
+	}
 }

@@ -5,6 +5,7 @@ public class Usuario {
 	private Integer id;
 	private String clave;
 	private Integer ht_persona_id;
+	private String username;
 
 	public Integer getHt_persona_id() {
 		return ht_persona_id;
@@ -28,6 +29,14 @@ public class Usuario {
 
 	public void setClave(String clave) {
 		this.clave = clave;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 }

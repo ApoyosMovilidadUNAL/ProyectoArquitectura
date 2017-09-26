@@ -5,7 +5,7 @@
   
   
 <mapper namespace="Cliente">
-	<select id="consultarClientePorId" resultType="Cliente">
+	<select id="consultarClientePorId" resultType="Cliente" parameterType="java.lang.Integer">
 		select * from HT_CLIENTE where ID = #{id} ;
 	</select>
 	
