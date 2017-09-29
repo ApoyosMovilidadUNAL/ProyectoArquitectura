@@ -8,7 +8,6 @@ public class HogarServicio {
 	private Integer ht_hogar_id;
 	private Integer ht_servicio_id;
 	private Date fecha_visita;
-	private Date fecha_instalacion;
 	private Date fecha_retiro;
 
 	public Integer getHt_hogar_id() {
@@ -41,14 +40,6 @@ public class HogarServicio {
 
 	public void setFecha_visita(Date fecha_visita) {
 		this.fecha_visita = fecha_visita;
-	}
-
-	public Date getFecha_instalacion() {
-		return fecha_instalacion;
-	}
-
-	public void setFecha_instalacion(Date fecha_instalacion) {
-		this.fecha_instalacion = fecha_instalacion;
 	}
 
 	public Date getFecha_retiro() {

@@ -12,7 +12,7 @@ import co.unal.sm.mybatis.MyBatisConnectionFactory;
 
 public class AutenticacionServicio {
 
-	public Boolean AutenticarUsuario(DatosAuth datosAuth) {
+	public static Boolean autenticarUsuario(DatosAuth datosAuth) {
 
 		System.out.println("Iniciando Autenticacion");
 
@@ -43,5 +43,10 @@ public class AutenticacionServicio {
 			}
 		}
 		return false;
+	}
+
+	public static Boolean logout(Integer id_usuario) {
+		
+		return null;
 	}
 }

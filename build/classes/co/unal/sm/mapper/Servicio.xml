@@ -26,9 +26,9 @@
 	<insert id="asignarServicioHogar" parameterType="HogarServicio">
 		insert into
 		HT_HOGAR_SERVICIO(ESTADO_SERVICIO, HT_HOGAR_ID, HT_SERVICIO_ID,
-		FECHA_VISITA, FECHA_INSTALACION, FECHA_RETIRO)
+		FECHA_VISITA, FECHA_RETIRO)
 		values(#{estado_servicio},#{ht_hogar_id},#{ht_servicio_id},
-		#{fecha_visita}, #{fecha_instalacion}, #{fecha_retiro})
+		#{fecha_visita}, #{fecha_retiro})
 	</insert>
 
 	<select id="consultarServiciosHogar" parameterType="java.lang.Integer"

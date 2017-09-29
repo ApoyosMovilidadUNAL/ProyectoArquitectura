@@ -6,7 +6,6 @@
 
 <configuration>
 	<typeAliases>
-		<typeAlias type="co.unal.sm.dto.Contacto" alias="Contacto"/>
 		<typeAlias type="co.unal.sm.dto.Cliente" alias="Cliente"/>
 		<typeAlias type="co.unal.sm.dto.Persona" alias="Persona"/>
 		<typeAlias type="co.unal.sm.dto.Hogar" alias="Hogar"/>
@@ -27,7 +26,6 @@
 		</environment>
 	</environments>
 	<mappers>
-		<mapper resource="co/unal/sm/mapper/Contacto.xml"/>
 		<mapper resource="co/unal/sm/mapper/Cliente.xml"/>
 		<mapper resource="co/unal/sm/mapper/Persona.xml"/>
 		<mapper resource="co/unal/sm/mapper/Hogar.xml"/>
