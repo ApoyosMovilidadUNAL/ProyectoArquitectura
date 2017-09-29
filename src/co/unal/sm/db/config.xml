@@ -12,6 +12,7 @@
 		<typeAlias type="co.unal.sm.dto.HogarServicio" alias="HogarServicio"/>
 		<typeAlias type="co.unal.sm.dto.Servicio" alias="Servicio"/>
 		<typeAlias type="co.unal.sm.dto.Usuario" alias="Usuario"/>
+		<typeAlias type="co.unal.sm.dto.Sesion" alias="Sesion"/>
 		
 	</typeAliases>
 	<environments default="development">

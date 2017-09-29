@@ -21,5 +21,9 @@
 		select *
 		from HT_USUARIO where HT_PERSONA_ID = #{idPersona}
 	</select>
+	
+	<update id="actualizarToken" parameterType="Sesion">
+		update HT_USUARIO set CLAVE = #{token} where id = #{id}
+	</update>
 
 </mapper>
