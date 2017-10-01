@@ -15,9 +15,12 @@ import encriptar.md5.md5;
 
 public class AutenticacionServicio {
 
-	public static String autenticarUsuario(DatosAuth datosAuth) {
+	public static Sesion autenticarUsuario(DatosAuth datosAuth) {
 
 		System.out.println("Iniciando Autenticacion");
+		
+		System.out.println(datosAuth.getClave());
+		System.out.println(datosAuth.getUsuario());
 
 		String server = "ldap://ldaprbog.unal.edu.co:389"; // servidor de LDAP
 		String usuario = datosAuth.getUsuario(); // Usuario de Autenticacion
@@ -47,20 +50,31 @@ public class AutenticacionServicio {
 			Sesion sesion = new Sesion();
 			sesion.setId(idPersona);
 			System.out.println("identificacion==="+identificacion);
-			Double rd = Math.random()*1000000000;
-			Integer r= rd.intValue();
+			Double randonDouble = Math.random()*1000000000;
+			Integer randonInteger= randonDouble.intValue();
 			
-			sesion.setToken(md5.MD5(r.toString()+identificacion));
+			sesion.setToken(md5.MD5(randonInteger.toString()+identificacion));
 			if (admin != null) {
 				sesionDao.actualizarToken(sesion);
-				return sesion.getToken();
+//				return sesion.getToken();
+				return sesion;
 			}
 		}
 		return null;
 	}
 
-	public static Boolean logout(Integer id_usuario) {
+	public static Boolean logout(Sesion sesion) {
 		
+		try{
+			SesionDao sesionDao = new SesionDao(MyBatisConnectionFactory.getSqlSessionFactory());
+			System.out.println(sesion.getToken());
+			System.out.println(sesion.getId());
+			sesion.setToken("");
+			sesionDao.actualizarToken(sesion);
+			return true;
+		}catch(Exception e){
+			
+		}
 		return null;
 	}
 }
