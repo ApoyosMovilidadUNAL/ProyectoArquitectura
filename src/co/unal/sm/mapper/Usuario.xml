@@ -23,7 +23,7 @@
 	</select>
 	
 	<update id="actualizarToken" parameterType="Sesion">
-		update HT_USUARIO set CLAVE = #{token} where id = #{id}
+		update HT_USUARIO set SESION_TOKEN = #{token} where id = #{id}
 	</update>
 
 </mapper>

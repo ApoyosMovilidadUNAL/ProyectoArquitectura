@@ -14,7 +14,7 @@ import co.unal.sm.servicios.ClienteServicio;
 public class AuthRest extends RestService {
 
 	@POST("/login")
-	public static Boolean autenticarUsuario(DatosAuth datosAuth) {
+	public static String autenticarUsuario(DatosAuth datosAuth) {
 		return AutenticacionServicio.autenticarUsuario(datosAuth);
 	}
 	
