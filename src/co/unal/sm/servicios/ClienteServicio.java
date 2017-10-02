@@ -1,5 +1,7 @@
 package co.unal.sm.servicios;
 
+import java.util.List;
+
 import co.unal.sm.dao.ClienteDao;
 import co.unal.sm.dao.PersonaDao;
 import co.unal.sm.dto.Cliente;
@@ -8,7 +10,7 @@ import co.unal.sm.mybatis.MyBatisConnectionFactory;
 
 public class ClienteServicio {
 
-	public static Persona consultarCliente(Integer id) {
+	public static Persona consultarClientePorId(Integer id) {
 
 		ClienteDao clienteDao = new ClienteDao(MyBatisConnectionFactory.getSqlSessionFactory());
 		Cliente cliente = new Cliente();
@@ -33,6 +35,14 @@ public class ClienteServicio {
 			creado = clienteDao.agregarCliente(personaId);
 		}
 		return creado;
+	}
+	
+	public static List<Persona> consultarClientes(){
+		
+		ClienteDao clienteDao =new ClienteDao(MyBatisConnectionFactory.getSqlSessionFactory());
+		List<Persona> clientes = clienteDao.consultarClientes();
+		
+		return clientes;
 	}
 	
 }

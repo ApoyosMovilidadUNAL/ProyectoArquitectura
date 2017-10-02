@@ -1,9 +1,14 @@
 package co.unal.sm.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import co.unal.sm.dto.Cliente;
+import co.unal.sm.dto.Hogar;
+import co.unal.sm.dto.Persona;
 
 public class ClienteDao {
 
@@ -39,5 +44,18 @@ public class ClienteDao {
 		}
 		System.out.println("agregarCliente()--->" + id_cliente);
 		return true;
+	}
+	
+	public List<Persona> consultarClientes(){
+		List<Persona> clientes = new ArrayList<>();
+		SqlSession session = sqlSessionFactory.openSession();
+		
+		try{
+			clientes = session.selectList("Cliente.consultarClientes");
+		}finally{
+			session.close();
+		}
+		System.out.println("consultarCLiente()--->" + clientes);
+		return clientes;
 	}
 }
