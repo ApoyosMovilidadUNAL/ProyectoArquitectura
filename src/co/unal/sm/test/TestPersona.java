@@ -21,7 +21,7 @@ public class TestPersona {
 		@SuppressWarnings("unused")
 		Persona cliente = new Persona();
 		
-		cliente  = ClienteServicio.consultarCliente(2);
+		cliente  = ClienteServicio.consultarClientePorId(2);
 	}
 
 }
