@@ -47,5 +47,9 @@
 	<select id="consultarVisitasNuevas" parameterType="java.util.Date" resultType="HogarServicio">
 		select * from HT_HOGAR_SERVICIO where #{date} > FECHA_VISITA 
 	</select>
+	
+	<select id="consultarVisitasFinalizadas" parameterType="java.util.Date" resultType="HogarServicio">
+		select * from HT_HOGAR_SERVICIO where FECHA_VISITA > #{date}
+	</select>
 
 </mapper>

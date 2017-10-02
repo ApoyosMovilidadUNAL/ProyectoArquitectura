@@ -45,6 +45,7 @@ public class ServicioRest extends RestService {
 		return ServicioControladorServicio.consultarVisitasNuevas();
 	}
 	
+	
 
 
 }

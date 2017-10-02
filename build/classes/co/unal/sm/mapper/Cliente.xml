@@ -13,13 +13,13 @@
 		insert into HT_CLIENTE(HT_PERSONA_ID) values(#{ht_persona_id});
 	</insert>
 	
-	<select id="consultarClientes" resultType="Persona" parameterType="java.lang.Integer">
+	<select id="consultarClientes" resultType="Persona">
 		select ht_persona.ID, 
 				ht_persona.NOMBRE, 
 				ht_persona.APELLIDO,
 				ht_persona.CORREO,
 				ht_persona.IDENTIFICACION
-		from dbhogar.ht_cliente,dbhogar.ht_persona 
-		where dbhogar.ht_cliente.HT_PERSONA_ID = dbhogar.ht_persona.ID;
+		from ht_cliente,ht_persona 
+		where ht_cliente.HT_PERSONA_ID = ht_persona.ID;
 	</select>
 </mapper>
