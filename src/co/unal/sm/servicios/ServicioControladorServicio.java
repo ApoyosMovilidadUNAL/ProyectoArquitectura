@@ -40,5 +40,10 @@ public class ServicioControladorServicio {
 		ServicioDao servicioDao = new ServicioDao(MyBatisConnectionFactory.getSqlSessionFactory());
 		return servicioDao.asignarServicioHogar(hogarServicio);
 	}
+	
+	public static List<HogarServicio> consultarVisitasNuevas(){
+		ServicioDao servicioDao = new ServicioDao(MyBatisConnectionFactory.getSqlSessionFactory());
+		return servicioDao.consultarVisitasNuevas();
+	}
 
 }

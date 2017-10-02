@@ -40,6 +40,12 @@ public class ServicioRest extends RestService {
 		return ServicioControladorServicio.asignarServicioHogar(hogarServicio);
 	}
 	
+	@GET("/servicio/consultarVisitasNuevas")
+	public static List<HogarServicio> consultarVisitasNuevas() {
+		return ServicioControladorServicio.consultarVisitasNuevas();
+	}
 	
+	
+
 
 }

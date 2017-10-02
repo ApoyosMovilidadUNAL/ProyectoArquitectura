@@ -1,6 +1,9 @@
 package co.unal.sm.dao;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -107,4 +110,46 @@ public class ServicioDao {
 			session.close();
 		}
 	}
+
+	public List<HogarServicio> consultarVisitasNuevas() {
+		List<HogarServicio> hogarServicios = new ArrayList<>();
+		SqlSession session = sqlSessionFactory.openSession();
+		try {
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+			Date date = new Date();
+			System.out.println("consultarVisitasNuevas() " + date);
+			hogarServicios = session.selectList("Servicio.consultarVisitasNuevas",date);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			session.close();
+		}
+		return hogarServicios;
+	}
+	
+	public List<HogarServicio> consultarVisitasFinalizadas() {
+		List<HogarServicio> hogarServicios = new ArrayList<>();
+		SqlSession session = sqlSessionFactory.openSession();
+		System.out.println("dfsdfsdfsd");
+		try {
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+			Date date = new Date();
+			Calendar calendar = Calendar.getInstance();
+			calendar.setTime(date);
+			calendar.add(Calendar.DATE, 4);
+			
+			System.out.println("calendar" + calendar.getTime());
+			date = calendar.getTime();
+			System.out.println("consultarVisitasNuevas() " + date);
+			hogarServicios = session.selectList("Servicio.consultarVisitasNuevas",date);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			session.close();
+		}
+		return hogarServicios;
+	}
+	
 }
