@@ -43,5 +43,9 @@
 		HT_HOGAR_SERVICIO set ESTADO_SERVICIO = #{estado_servicio} where
 		HT_HOGAR_ID = #{ht_hogar_id} and HT_SERVICIO_ID = #{ht_servicio_id}
 	</update>
+	
+	<select id="consultarVisitasNuevas" parameterType="java.util.Date" resultType="HogarServicio">
+		select * from HT_HOGAR_SERVICIO where #{date} > FECHA_VISITA 
+	</select>
 
 </mapper>
