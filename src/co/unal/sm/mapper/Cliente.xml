@@ -6,20 +6,20 @@
   
 <mapper namespace="Cliente">
 	<select id="consultarClientePorId" resultType="Cliente" parameterType="java.lang.Integer">
-		select * from HT_CLIENTE where ID = #{id} ;
+		select * from HT_CLIENTE where ID = #{id} 
 	</select>
 	
 	<insert id="agregarCliente" parameterType="java.lang.Integer">
-		insert into HT_CLIENTE(HT_PERSONA_ID) values(#{ht_persona_id});
+		insert into HT_CLIENTE(HT_PERSONA_ID) values(#{ht_persona_id})
 	</insert>
 	
 	<select id="consultarClientes" resultType="Persona">
-		select ht_persona.ID, 
-				ht_persona.NOMBRE, 
-				ht_persona.APELLIDO,
-				ht_persona.CORREO,
-				ht_persona.IDENTIFICACION
-		from ht_cliente,ht_persona 
-		where ht_cliente.HT_PERSONA_ID = ht_persona.ID;
+		select HT_PERSONA.ID, 
+				HT_PERSONA.NOMBRE, 
+				HT_PERSONA.APELLIDO,
+				HT_PERSONA.CORREO,
+				HT_PERSONA.IDENTIFICACION
+		from HT_CLIENTE,HT_PERSONA 
+		where HT_CLIENTE.HT_PERSONA_ID = HT_PERSONA.ID
 	</select>
 </mapper>

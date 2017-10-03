@@ -16,16 +16,15 @@ public class HogarDao {
 		this.sqlSessionFactory = sqlSessionFactory;
 	}
 
-	public Hogar consultarHogarPorCliente(Integer ht_clente_id) {
+	public List<Hogar> consultarHogarPorCliente(Integer ht_clente_id) {
 		Hogar hogar = new Hogar();
 		SqlSession session = sqlSessionFactory.openSession();
 		try {
-			hogar = session.selectOne("Hogar.consultarHogarPorCliente", ht_clente_id);
+			System.out.println("consultarHogarPorCliente()--->" + hogar);
+			return session.selectList("Hogar.consultarHogarPorCliente", ht_clente_id);
 		} finally {
 			session.close();
 		}
-		System.out.println("consultarHogarPorCliente()--->" + hogar);
-		return hogar;
 	}
 	
 	public List<Hogar> consultarHogares() {

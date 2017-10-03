@@ -18,7 +18,7 @@
 	<insert id="agregarHogar" parameterType="Hogar">
 		insert into
 		HT_HOGAR(DIRECCION, UBICACION, HT_CLENTE_ID,FECHA_REGISTRO)
-		values(#{direccion},#{ubicacion},#{ht_clente_id},#{fecha_registro})
+		values(#{direccion},#{ubicacion},#{ht_clente_id},sysdate())
 	</insert>
 	
 	<select id="consultarHogarPorId" parameterType="java.lang.Integer" resultType="Hogar">

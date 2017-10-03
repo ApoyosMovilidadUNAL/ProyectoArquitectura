@@ -15,7 +15,7 @@ import co.unal.sm.servicios.HogarControladorServicio;
 public class HogarRest extends RestService {
 
 	@POST("/hogar/consultarHogarPorCliente")
-	public static Hogar consultarHogarPorCliente(Integer id) {
+	public static List<Hogar> consultarHogarPorCliente(Integer id) {
 		return HogarControladorServicio.consultarHogarPorCliente(id);
 	}
 

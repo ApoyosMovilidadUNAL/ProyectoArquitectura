@@ -26,6 +26,7 @@ public class ClienteServicio {
 	}
 	
 	public static boolean crearCliente(Persona persona){
+		System.out.println("persona" + persona.getCorreo());
 		Boolean creado = false;
 		PersonaDao personaDao = new PersonaDao(MyBatisConnectionFactory.getSqlSessionFactory());
 		ClienteDao clienteDao =new ClienteDao(MyBatisConnectionFactory.getSqlSessionFactory());
