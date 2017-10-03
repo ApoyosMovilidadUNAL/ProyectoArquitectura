@@ -30,5 +30,10 @@ public class HogarControladorServicio {
 		HogarDao hogarDao = new HogarDao(MyBatisConnectionFactory.getSqlSessionFactory());
 		return hogarDao.consultarHogares();
 	}
+	
+	public static Hogar consultarHogarPorId(Integer ht_hogar_id){
+		HogarDao hogarDao = new HogarDao(MyBatisConnectionFactory.getSqlSessionFactory());
+		return hogarDao.consultarHogarPorId(ht_hogar_id);
+	}
 
 }

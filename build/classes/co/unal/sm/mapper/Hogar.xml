@@ -20,5 +20,10 @@
 		HT_HOGAR(DIRECCION, UBICACION, HT_CLENTE_ID,FECHA_REGISTRO)
 		values(#{direccion},#{ubicacion},#{ht_clente_id},sysdate())
 	</insert>
+	
+	<select id="consultarHogarPorId" parameterType="java.lang.Integer" resultType="Hogar">
+		select *
+		from HT_HOGAR where ID = #{ht_hogar_id}
+	</select>
 
 </mapper>

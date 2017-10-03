@@ -56,4 +56,16 @@ public class HogarDao {
 		System.out.println("agregarHogar()--->" + id_hogar);
 		return true;
 	}
+
+	public Hogar consultarHogarPorId(Integer ht_hogar_id) {
+		Hogar hogar = new Hogar();
+		SqlSession session = sqlSessionFactory.openSession();
+		try {
+			hogar = session.selectOne("Hogar.consultarHogarPorId", ht_hogar_id);
+		} finally {
+			session.close();
+		}
+		System.out.println("consultarHogarPorId()--->" + hogar);
+		return hogar;
+	}
 }
