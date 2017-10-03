@@ -140,9 +140,29 @@ public class ServicioDao {
 			Date date = new Date();
 			Calendar calendar = Calendar.getInstance();
 			calendar.setTime(date);
-			calendar.add(Calendar.DATE, 4);
+			calendar.add(Calendar.DATE, 0);
 			date = calendar.getTime();
-			hogarServicios = session.selectList("Servicio.consultarVisitasNuevas",date);
+			hogarServicios = session.selectList("Servicio.consultarVisitasFinalizadas",date);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			session.close();
+		}
+		return hogarServicios;
+	}
+	
+	public List<HogarServicio> consultarVisitasRetiro() {
+		List<HogarServicio> hogarServicios = new ArrayList<>();
+		SqlSession session = sqlSessionFactory.openSession();
+		try {
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+			Date date = new Date();
+			Calendar calendar = Calendar.getInstance();
+			calendar.setTime(date);
+			calendar.add(Calendar.DATE, 0);
+			date = calendar.getTime();
+			hogarServicios = session.selectList("Servicio.consultarVisitasRetiro",date);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;

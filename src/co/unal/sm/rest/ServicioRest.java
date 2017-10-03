@@ -28,25 +28,33 @@ public class ServicioRest extends RestService {
 
 	@POST("/servicio/actualizarEstadoServicioHogar")
 	public static boolean actualizarEstadoServicioHogar(HogarServicio hogarServicio) {
-		return ServicioControladorServicio.actualizarEstadoServicioHogar(hogarServicio.getHt_hogar_id(), hogarServicio.getHt_servicio_id(), hogarServicio.getEstado_servicio());
+		return ServicioControladorServicio.actualizarEstadoServicioHogar(hogarServicio.getHt_hogar_id(),
+				hogarServicio.getHt_servicio_id(), hogarServicio.getEstado_servicio());
 	}
-	
+
 	@GET("/servicio/consultarServicios")
 	public static List<Servicio> consultarServicios(Integer id_hogar, Integer id_servicio) {
 		return ServicioControladorServicio.consultarServicios();
 	}
-	
+
 	@POST("/servicio/asignarServicioHogar")
 	public static boolean asignarServicioHogar(HogarServicio hogarServicio) {
 		return ServicioControladorServicio.asignarServicioHogar(hogarServicio);
 	}
-	
+
 	@GET("/servicio/consultarVisitasNuevas")
 	public static List<Visita> consultarVisitasNuevas() {
 		return ServicioControladorServicio.consultarVisitasNuevas();
 	}
-	
-	
 
+	@GET("/servicio/consultarVisitasFinalizadas")
+	public static List<Visita> consultarVisitasFinalizadas() {
+		return ServicioControladorServicio.consultarVisitasFinalizadas();
+	}
+
+	@GET("/servicio/consultarVisitasRetiro")
+	public static List<Visita> consultarVisitasRetiro() {
+		return ServicioControladorServicio.consultarVisitasRetiro();
+	}
 
 }
