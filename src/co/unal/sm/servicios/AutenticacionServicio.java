@@ -73,8 +73,7 @@ public class AutenticacionServicio {
 			sesionDao.actualizarToken(sesion);
 			return true;
 		}catch(Exception e){
-			
+			return false;
 		}
-		return null;
 	}
 }

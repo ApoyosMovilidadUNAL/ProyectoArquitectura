@@ -3,6 +3,7 @@ package co.unal.sm.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -17,14 +18,15 @@ public class HogarDao {
 	}
 
 	public List<Hogar> consultarHogarPorCliente(Integer ht_clente_id) {
-		Hogar hogar = new Hogar();
+		List<Hogar> hogares = new ArrayList<>();
 		SqlSession session = sqlSessionFactory.openSession();
 		try {
-			System.out.println("consultarHogarPorCliente()--->" + hogar);
-			return session.selectList("Hogar.consultarHogarPorCliente", ht_clente_id);
+			hogares = session.selectList("Hogar.consultarHogarPorCliente", ht_clente_id);
 		} finally {
 			session.close();
 		}
+		System.out.println("consultarHogarPorCliente()--->" + hogares);
+		return hogares;
 	}
 	
 	public List<Hogar> consultarHogares() {
