@@ -13,6 +13,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import co.unal.sm.dto.HogarServicio;
 import co.unal.sm.dto.Servicio;
+import co.unal.sm.dtoFront.Visita;
 
 public class ServicioDao {
 
@@ -115,9 +116,12 @@ public class ServicioDao {
 		List<HogarServicio> hogarServicios = new ArrayList<>();
 		SqlSession session = sqlSessionFactory.openSession();
 		try {
-			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			Date date = new Date();
-			System.out.println("consultarVisitasNuevas() " + date);
+			Calendar calendar = Calendar.getInstance();
+			calendar.setTime(date);
+			calendar.add(Calendar.DATE, 0);
+			date = calendar.getTime();
+			System.out.println("consultarVisitasNuevas() --- " + date);
 			hogarServicios = session.selectList("Servicio.consultarVisitasNuevas",date);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -131,17 +135,13 @@ public class ServicioDao {
 	public List<HogarServicio> consultarVisitasFinalizadas() {
 		List<HogarServicio> hogarServicios = new ArrayList<>();
 		SqlSession session = sqlSessionFactory.openSession();
-		System.out.println("dfsdfsdfsd");
 		try {
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			Date date = new Date();
 			Calendar calendar = Calendar.getInstance();
 			calendar.setTime(date);
 			calendar.add(Calendar.DATE, 4);
-			
-			System.out.println("calendar" + calendar.getTime());
 			date = calendar.getTime();
-			System.out.println("consultarVisitasNuevas() " + date);
 			hogarServicios = session.selectList("Servicio.consultarVisitasNuevas",date);
 		} catch (Exception e) {
 			e.printStackTrace();

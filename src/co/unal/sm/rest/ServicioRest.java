@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 
 import co.unal.sm.dto.HogarServicio;
 import co.unal.sm.dto.Servicio;
+import co.unal.sm.dtoFront.Visita;
 import co.unal.sm.net.GET;
 import co.unal.sm.net.POST;
 import co.unal.sm.net.RestService;
@@ -41,7 +42,7 @@ public class ServicioRest extends RestService {
 	}
 	
 	@GET("/servicio/consultarVisitasNuevas")
-	public static List<HogarServicio> consultarVisitasNuevas() {
+	public static List<Visita> consultarVisitasNuevas() {
 		return ServicioControladorServicio.consultarVisitasNuevas();
 	}
 	

@@ -45,11 +45,11 @@
 	</update>
 	
 	<select id="consultarVisitasNuevas" parameterType="java.util.Date" resultType="HogarServicio">
-		select * from HT_HOGAR_SERVICIO where #{date} > FECHA_VISITA 
+		select * from HT_HOGAR_SERVICIO where #{date} > FECHA_VISITA and FECHA_RETIRO is null
 	</select>
 	
 	<select id="consultarVisitasFinalizadas" parameterType="java.util.Date" resultType="HogarServicio">
-		select * from HT_HOGAR_SERVICIO where FECHA_VISITA > #{date}
+		select * from HT_HOGAR_SERVICIO where FECHA_VISITA > #{date} and FECHA_RETIRO > #{date}
 	</select>
 
 </mapper>
