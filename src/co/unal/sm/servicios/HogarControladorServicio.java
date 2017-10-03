@@ -21,7 +21,7 @@ public class HogarControladorServicio {
 		return hogarDao.agregarHogar(hogar);
 	}
 	
-	public static Hogar consultarHogarPorCliente(Integer ht_clente_id){
+	public static List<Hogar> consultarHogarPorCliente(Integer ht_clente_id){
 		HogarDao hogarDao = new HogarDao(MyBatisConnectionFactory.getSqlSessionFactory());
 		return hogarDao.consultarHogarPorCliente(ht_clente_id);
 	}
