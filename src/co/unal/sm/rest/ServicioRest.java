@@ -33,7 +33,7 @@ public class ServicioRest extends RestService {
 	}
 
 	@GET("/servicio/consultarServicios")
-	public static List<Servicio> consultarServicios(Integer id_hogar, Integer id_servicio) {
+	public static List<Servicio> consultarServicios() {
 		return ServicioControladorServicio.consultarServicios();
 	}
 
