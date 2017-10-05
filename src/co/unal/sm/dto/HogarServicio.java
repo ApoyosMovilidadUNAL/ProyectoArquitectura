@@ -9,6 +9,24 @@ public class HogarServicio {
 	private Integer ht_servicio_id;
 	private Date fecha_visita;
 	private Date fecha_retiro;
+	private String fecha_visita_entrada;
+	private String fecha_retiro_entrada;
+
+	public String getFecha_visita_entrada() {
+		return fecha_visita_entrada;
+	}
+
+	public void setFecha_visita_entrada(String fecha_visita_entrada) {
+		this.fecha_visita_entrada = fecha_visita_entrada;
+	}
+
+	public String getFecha_retiro_entrada() {
+		return fecha_retiro_entrada;
+	}
+
+	public void setFecha_retiro_entrada(String fecha_retiro_entrada) {
+		this.fecha_retiro_entrada = fecha_retiro_entrada;
+	}
 
 	public Integer getHt_hogar_id() {
 		return ht_hogar_id;
@@ -49,5 +67,6 @@ public class HogarServicio {
 	public void setFecha_retiro(Date fecha_retiro) {
 		this.fecha_retiro = fecha_retiro;
 	}
+
 
 }

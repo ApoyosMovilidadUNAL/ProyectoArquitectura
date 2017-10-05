@@ -1,5 +1,9 @@
 package co.unal.sm.rest;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.annotation.WebServlet;
@@ -39,7 +43,16 @@ public class ServicioRest extends RestService {
 
 	@POST("/servicio/asignarServicioHogar")
 	public static boolean asignarServicioHogar(HogarServicio hogarServicio) {
-		return ServicioControladorServicio.asignarServicioHogar(hogarServicio);
+        DateFormat targetFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date date;
+		try {
+			date = targetFormat.parse(hogarServicio.getFecha_visita_entrada());
+			hogarServicio.setFecha_visita(date);
+			return ServicioControladorServicio.asignarServicioHogar(hogarServicio);
+		} catch (ParseException e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	@GET("/servicio/consultarVisitasNuevas")
