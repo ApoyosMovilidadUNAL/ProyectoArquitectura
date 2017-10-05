@@ -16,7 +16,10 @@ import encriptar.md5.md5;
 public class AutenticacionServicio {
 
 	public static Sesion autenticarUsuario(DatosAuth datosAuth) {
-
+		
+		Sesion sesion = new Sesion();
+		sesion.setToken("");
+		
 		System.out.println("Iniciando Autenticacion");
 		
 		System.out.println(datosAuth.getClave());
@@ -38,7 +41,7 @@ public class AutenticacionServicio {
 				identificacion = atr.get().toString();
 			} catch (NamingException e) {
 				e.printStackTrace();
-				return null;
+				return sesion;
 			}
 			PersonaDao personaDao = new PersonaDao(MyBatisConnectionFactory.getSqlSessionFactory());
 			idPersona = personaDao.consultarIdPersona(identificacion);
@@ -47,7 +50,7 @@ public class AutenticacionServicio {
 			
 			SesionDao sesionDao = new SesionDao(MyBatisConnectionFactory.getSqlSessionFactory());
 			
-			Sesion sesion = new Sesion();
+			
 			sesion.setId(idPersona);
 			System.out.println("identificacion==="+identificacion);
 			Double randonDouble = Math.random()*1000000000;
@@ -60,7 +63,7 @@ public class AutenticacionServicio {
 				return sesion;
 			}
 		}
-		return null;
+		return sesion;
 	}
 
 	public static Boolean logout(Sesion sesion) {
