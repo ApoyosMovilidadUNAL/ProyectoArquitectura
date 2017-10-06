@@ -52,5 +52,17 @@ public class PersonaDao {
 			session.close();	
 		}
 	}
+	
+	public Persona consultarPersonaPorIdCliente(Integer id) {
+		Persona persona = new Persona();
+		SqlSession session = sqlSessionFactory.openSession();
+		try {
+			persona = session.selectOne("Persona.consultarPersonaPorIdCliente", id);
+		} finally {
+			session.close();
+		}
+		System.out.println("consultarPersona()--->" + persona);
+		return persona;
+	}
 
 }

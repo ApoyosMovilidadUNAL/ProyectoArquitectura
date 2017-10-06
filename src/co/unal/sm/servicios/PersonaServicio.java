@@ -12,5 +12,12 @@ public class PersonaServicio {
 		persona = dao.consultarPersonaPorId(id);
 		return persona;
 	}
+	
+	public static Persona consultarPersonaPorIdCliente(Integer id){
+		PersonaDao dao = new PersonaDao(MyBatisConnectionFactory.getSqlSessionFactory());
+		Persona persona = new Persona();
+		persona = dao.consultarPersonaPorIdCliente(id);
+		return persona;
+	}
 
 }

@@ -56,7 +56,7 @@ public class ServicioControladorServicio {
 			visita.setNombreServicio(servicio.getNombre_servicio());
 			Hogar hogar = HogarControladorServicio.consultarHogarPorId(hogarServicio.getHt_hogar_id());
 			visita.setDireccion(hogar.getDireccion());
-			Persona persona = PersonaServicio.consultarPersonaPorId(hogar.getHt_clente_id());
+			Persona persona = PersonaServicio.consultarPersonaPorIdCliente(hogar.getHt_clente_id());
 			visita.setNombreCliente(persona.getNombre() + " " + persona.getApellido());
 			visita.setId_cliente(hogar.getHt_clente_id());
 			visita.setId_hogar(hogarServicio.getHt_hogar_id());
@@ -79,7 +79,7 @@ public class ServicioControladorServicio {
 			visita.setNombreServicio(servicio.getNombre_servicio());
 			Hogar hogar = HogarControladorServicio.consultarHogarPorId(hogarServicio.getHt_hogar_id());
 			visita.setDireccion(hogar.getDireccion());
-			Persona persona = PersonaServicio.consultarPersonaPorId(hogar.getHt_clente_id());
+			Persona persona = PersonaServicio.consultarPersonaPorIdCliente(hogar.getHt_clente_id());
 			visita.setNombreCliente(persona.getNombre() + " " + persona.getApellido());
 			visita.setId_cliente(hogar.getHt_clente_id());
 			visita.setId_hogar(hogarServicio.getHt_hogar_id());
@@ -92,7 +92,7 @@ public class ServicioControladorServicio {
 	
 	public static List<Visita> consultarVisitasRetiro() {
 		ServicioDao servicioDao = new ServicioDao(MyBatisConnectionFactory.getSqlSessionFactory());
-		List<HogarServicio> listaHogarServicio = servicioDao.consultarVisitasNuevas();
+		List<HogarServicio> listaHogarServicio = servicioDao.consultarVisitasRetiro();
 		List<Visita> listaVisitas = new ArrayList<>();
 		for (HogarServicio hogarServicio : listaHogarServicio) {
 			Visita visita = new Visita();
@@ -102,7 +102,7 @@ public class ServicioControladorServicio {
 			visita.setNombreServicio(servicio.getNombre_servicio());
 			Hogar hogar = HogarControladorServicio.consultarHogarPorId(hogarServicio.getHt_hogar_id());
 			visita.setDireccion(hogar.getDireccion());
-			Persona persona = PersonaServicio.consultarPersonaPorId(hogar.getHt_clente_id());
+			Persona persona = PersonaServicio.consultarPersonaPorIdCliente(hogar.getHt_clente_id());
 			visita.setNombreCliente(persona.getNombre() + " " + persona.getApellido());
 			visita.setId_cliente(hogar.getHt_clente_id());
 			visita.setId_hogar(hogarServicio.getHt_hogar_id());

@@ -9,6 +9,13 @@
 		select * from HT_PERSONA where ID = #{id}
 	</select>
 	
+	<select id="consultarPersonaPorIdCliente" resultType="Persona" parameterType="java.lang.Integer">
+		select * from dbhogar.HT_PERSONA where HT_PERSONA.id =
+			(	
+				select ht_persona_id from dbhogar.HT_CLIENTE where ID = 24	 
+			)
+	</select>
+	
 	<insert id="agregarPersona" parameterType="Persona">
 		insert into HT_PERSONA(NOMBRE,APELLIDO,CORREO,IDENTIFICACION) values(#{nombre},#{apellido},#{correo},#{identificacion})
 	</insert>
