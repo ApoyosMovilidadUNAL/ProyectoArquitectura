@@ -21,6 +21,6 @@
 	</insert>
 	
 	<select id="consultarIdPersona" parameterType="java.lang.String" resultType="java.lang.Integer">
-		select ID from HT_PERSONA where IDENTIFICACION = #{identificacion}
+		select ID from HT_PERSONA where CORREO = #{correo}
 	</select>
 </mapper>
