@@ -50,7 +50,7 @@ public class AutenticacionServicio {
 				return sesion;
 			}
 			PersonaDao personaDao = new PersonaDao(MyBatisConnectionFactory.getSqlSessionFactory());
-			idPersona = personaDao.consultarIdPersona(correo);
+			idPersona = personaDao.consultarIdPersonaCorreo(correo);
 			UsuarioDao usuarioDao = new UsuarioDao(MyBatisConnectionFactory.getSqlSessionFactory());
 			Usuario admin = usuarioDao.consultarUsuarioPorIdPersona(idPersona);
 			

@@ -41,10 +41,22 @@ public class PersonaDao {
 		return true;
 	}
 	
-	public Integer consultarIdPersona(String correo){
+	public Integer consultarIdPersonaCorreo(String correo){
 		SqlSession session = sqlSessionFactory.openSession();
 		try {
 			return session.selectOne("Persona.consultarIdPersona", correo);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}finally {
+			session.close();	
+		}
+	}
+	
+	public Integer consultarIdPersona(String identificacion){
+		SqlSession session = sqlSessionFactory.openSession();
+		try {
+			return session.selectOne("Persona.consultarIdPersona", identificacion);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
