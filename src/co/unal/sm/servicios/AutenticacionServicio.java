@@ -27,7 +27,7 @@ public class AutenticacionServicio {
 
 //		String server = "ldap://ldaprbog.unal.edu.co:389"; // servidor de LDAP
 		
-		String server = "ldap://192.168.0.9:389"; // servidor de LDAP
+		String server = "ldap://192.168.99.102:389"; // servidor de LDAP
 		String usuario = datosAuth.getUsuario(); // Usuario de Autenticacion
 //		String dn = "uid=" + usuario + ",ou=people,o=bogota,o=unal.edu.co"; // Ruta
 		String dn = "cn=" + usuario + "@unal.edu.co,ou=AdminHogares,dc=arqsoft,dc=unal,dc=edu,dc=co"; // Ruta

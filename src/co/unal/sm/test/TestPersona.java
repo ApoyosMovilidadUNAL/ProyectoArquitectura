@@ -1,9 +1,6 @@
 package co.unal.sm.test;
 
-import co.unal.sm.dto.Cliente;
-import co.unal.sm.dto.Persona;
-import co.unal.sm.servicios.ClienteServicio;
-import co.unal.sm.servicios.PersonaServicio;
+import co.unal.sm.servicios.ConsumoServicio;
 
 public class TestPersona {
 
@@ -18,10 +15,16 @@ public class TestPersona {
 //		Boolean creacion = ClienteServicio.crearCliente(persona);
 //		System.out.println(creacion);
 		
-		@SuppressWarnings("unused")
-		Persona cliente = new Persona();
+//		@SuppressWarnings("unused")
+//		PruebaServicio pruebaServicio = new PruebaServicio();
+//		
+//		PruebaServicio.prueba();
 		
-		cliente  = ClienteServicio.consultarClientePorId(2);
+		
+		@SuppressWarnings("unused")
+		ConsumoServicio consumoServicio = new ConsumoServicio();
+		
+		ConsumoServicio.obtenerConsumo("jmhurtadoc@unal.edu.co");
 	}
 
 }

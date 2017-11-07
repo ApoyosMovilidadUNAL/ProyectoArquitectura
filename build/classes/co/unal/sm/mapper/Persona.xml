@@ -20,7 +20,12 @@
 		insert into HT_PERSONA(NOMBRE,APELLIDO,CORREO,IDENTIFICACION) values(#{nombre},#{apellido},#{correo},#{identificacion})
 	</insert>
 	
+	<select id="consultarIdPersonaCorreo" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select ID from HT_PERSONA where CORREO = #{correo}
+	</select>
+	
 	<select id="consultarIdPersona" parameterType="java.lang.String" resultType="java.lang.Integer">
 		select ID from HT_PERSONA where IDENTIFICACION = #{identificacion}
 	</select>
+	
 </mapper>

@@ -5,9 +5,8 @@ import java.util.List;
 import javax.servlet.annotation.WebServlet;
 
 import co.unal.sm.dto.Persona;
-import co.unal.sm.dto.Cliente;
-import co.unal.sm.net.POST;
 import co.unal.sm.net.GET;
+import co.unal.sm.net.POST;
 import co.unal.sm.net.RestService;
 import co.unal.sm.servicios.ClienteServicio;
 
