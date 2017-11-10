@@ -44,10 +44,10 @@ public class OperationhogarPortTypeProxy implements org.netbeans.j2ee.wsdl.Hogar
     return operationhogarPortType;
   }
   
-  public void operationhogarOperation(java.lang.String email, javax.xml.rpc.holders.FloatHolder consumoi, javax.xml.rpc.holders.FloatHolder consumoe) throws java.rmi.RemoteException{
+  public void operationhogarOperation(java.lang.String email, javax.xml.rpc.holders.FloatHolder consumoi, javax.xml.rpc.holders.FloatHolder consumoe, javax.xml.rpc.holders.BooleanHolder boleano) throws java.rmi.RemoteException{
     if (operationhogarPortType == null)
       _initOperationhogarPortTypeProxy();
-    operationhogarPortType.operationhogarOperation(email, consumoi, consumoe);
+    operationhogarPortType.operationhogarOperation(email, consumoi, consumoe, boleano);
   }
   
   

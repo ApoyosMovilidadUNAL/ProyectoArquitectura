@@ -8,5 +8,5 @@
 package org.netbeans.j2ee.wsdl.HogarInteligente.src.operationhogar;
 
 public interface OperationhogarPortType extends java.rmi.Remote {
-    public void operationhogarOperation(java.lang.String email, javax.xml.rpc.holders.FloatHolder consumoi, javax.xml.rpc.holders.FloatHolder consumoe) throws java.rmi.RemoteException;
+    public void operationhogarOperation(java.lang.String email, javax.xml.rpc.holders.FloatHolder consumoi, javax.xml.rpc.holders.FloatHolder consumoe, javax.xml.rpc.holders.BooleanHolder boleano) throws java.rmi.RemoteException;
 }

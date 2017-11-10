@@ -31,6 +31,8 @@ public class OperationhogarBindingStub extends org.apache.axis.client.Stub imple
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "consumoe"), org.apache.axis.description.ParameterDesc.OUT, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "float"), float.class, false, false);
         oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "boleano"), org.apache.axis.description.ParameterDesc.OUT, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"), boolean.class, false, false);
+        oper.addParameter(param);
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -89,7 +91,7 @@ public class OperationhogarBindingStub extends org.apache.axis.client.Stub imple
         }
     }
 
-    public void operationhogarOperation(java.lang.String email, javax.xml.rpc.holders.FloatHolder consumoi, javax.xml.rpc.holders.FloatHolder consumoe) throws java.rmi.RemoteException {
+    public void operationhogarOperation(java.lang.String email, javax.xml.rpc.holders.FloatHolder consumoi, javax.xml.rpc.holders.FloatHolder consumoe, javax.xml.rpc.holders.BooleanHolder boleano) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -121,6 +123,11 @@ public class OperationhogarBindingStub extends org.apache.axis.client.Stub imple
                 consumoe.value = ((java.lang.Float) _output.get(new javax.xml.namespace.QName("", "consumoe"))).floatValue();
             } catch (java.lang.Exception _exception) {
                 consumoe.value = ((java.lang.Float) org.apache.axis.utils.JavaUtils.convert(_output.get(new javax.xml.namespace.QName("", "consumoe")), float.class)).floatValue();
+            }
+            try {
+                boleano.value = ((java.lang.Boolean) _output.get(new javax.xml.namespace.QName("", "boleano"))).booleanValue();
+            } catch (java.lang.Exception _exception) {
+                boleano.value = ((java.lang.Boolean) org.apache.axis.utils.JavaUtils.convert(_output.get(new javax.xml.namespace.QName("", "boleano")), boolean.class)).booleanValue();
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
