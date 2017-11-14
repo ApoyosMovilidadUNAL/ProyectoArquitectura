@@ -21,11 +21,11 @@ public class ConsumoServicio {
 		Consumos consumoFinal = new Consumos() ;
 		try {
 			OperationhogarServiceLocator locator = new OperationhogarServiceLocator();
-//			locator.setoperationhogarPortEndpointAddress("http://192.168.0.23:9080/operationhogarService/operationhogarPort");
-			locator.setoperationhogarPortEndpointAddress("http://127.0.0.1:8088/runconsumo");
+			locator.setoperationhogarPortEndpointAddress("http://192.168.0.23:9080/operationhogarService/operationhogarPort");
+//			locator.setoperationhogarPortEndpointAddress("http://127.0.0.1:8088/runconsumo");
 //			OperationhogarBindingStub stub = new OperationhogarBindingStub(new URL(locator.getoperationhogarPortAddress()), locator);
-//			OperationhogarBindingStub stub = new OperationhogarBindingStub(new URL("http://192.168.0.23:9080/operationhogarService/operationhogarPort"), locator);
-			OperationhogarBindingStub stub = new OperationhogarBindingStub(new URL("http://127.0.0.1:8088/runconsumo"), locator);
+			OperationhogarBindingStub stub = new OperationhogarBindingStub(new URL("http://192.168.0.23:9080/operationhogarService/operationhogarPort"), locator);
+//			OperationhogarBindingStub stub = new OperationhogarBindingStub(new URL("http://127.0.0.1:8088/runconsumo"), locator);
 			stub.operationhogarOperation(correo, consumoi, consumoe, funciona);
 			
 			consumoFinal.setFunciona(funciona.value);
