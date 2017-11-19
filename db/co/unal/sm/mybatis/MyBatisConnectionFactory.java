@@ -20,6 +20,7 @@ public class MyBatisConnectionFactory {
 				sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
 			}
 			
+			
 		} catch (FileNotFoundException fileNotFoundException) {
 			fileNotFoundException.printStackTrace();
 		} catch (IOException ioException) {

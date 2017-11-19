@@ -4,6 +4,8 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
+import co.unal.sm.servicios.App;
+
 @WebListener
 public class InitApp implements ServletContextListener {
 	
@@ -20,6 +22,7 @@ public class InitApp implements ServletContextListener {
          System.out.println("...........                          ........!!!");
          System.out.println("...........                          ........!!!");
          System.out.println("...........                          ........!!!");
+         App.init();
     }
 	
 }

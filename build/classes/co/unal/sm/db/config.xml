@@ -5,6 +5,7 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
+	<!-- <properties resource="SMARTHOMESERVER_HOME/config/config.properties"></properties> -->
 	<typeAliases>
 		<typeAlias type="co.unal.sm.dto.Cliente" alias="Cliente"/>
 		<typeAlias type="co.unal.sm.dto.Persona" alias="Persona"/>

@@ -13,8 +13,8 @@
 
 	<insert id="agregarUsuario" parameterType="Usuario">
 		insert into
-		HT_USUARIO(CLAVE, HT_PERSONA_ID)
-		values(#{clave},#{ht_persona_id})
+		HT_USUARIO(HT_PERSONA_ID)
+		values(#{ht_persona_id})
 	</insert>
 
 	<select id="consultarUsuarioPorIdPersona" parameterType="java.lang.Integer" resultType="Usuario">
